@@ -3,7 +3,9 @@
 app = "example-fly-cron"
 kill_signal = "SIGINT"
 kill_timeout = 5
-processes = []
+[processes]
+  app = ""
+  cron = "cron -f"
 
 [build]
   [build.args]
@@ -15,6 +17,7 @@ processes = []
   LOG_CHANNEL = "stderr"
   LOG_LEVEL = "info"
   LOG_STDERR_FORMATTER = "Monolog\\Formatter\\JsonFormatter"
+  APP_KEY = "base64:1FFeOuQPy3hDPfBcAuyPWpS4PsNSH2eedJiYmBNFl5I="
 
 [experimental]
   allowed_public_ports = []

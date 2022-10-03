@@ -16,6 +16,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
+
+        $schedule->command('quick-env-test')->everyMinute()->appendOutputTo('/var/www/html/cron.log');
     }
 
     /**
